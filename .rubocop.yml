@@ -1,0 +1,18 @@
+AllCops:
+  Exclude:
+    - db/migrate/*
+    - db/schema.rb
+    - db/seeds.rb
+    - Gemfile
+    - Gemfile.lock
+    - bin/*
+    - scripts/*
+    - spec/helpers/*
+  NewCops: enable
+  TargetRubyVersion: 2.6.5
+
+Layout/LineLength:
+  Max: 80
+  Enabled: true
+  Exclude:
+    - 'config/routes.rb'

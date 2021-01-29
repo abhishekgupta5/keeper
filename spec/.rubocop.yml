@@ -1,0 +1,6 @@
+inherit_from:
+  - ../.rubocop.yml
+
+Layout/LineLength:
+  Max: 100
+
