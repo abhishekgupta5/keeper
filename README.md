@@ -1,5 +1,6 @@
 # Keeper!
 
+[![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop-hq/rubocop)
 ### Tools used
 * Ruby 2.6.5 / Rails 6.0 (Only the necessary part) for app
 * PostgreSQL 10 as DB
@@ -19,8 +20,10 @@
 * Any client can be used to consume from the API. I used HTTPie and Postman
 
 ## API consumption
-We have 3 models and tables. **User**, **Contact** and **Transactions**
- 
+**Sidenote:** There are some images at the end of this file to see some calls in action
+
+We have 3 models and tables. **User**, **Contact** and **Transactions**.
+
  #### Creating a User - `http POST localhost:3000/api/v1/users`
     It returns an id which will be used for interacting with transactions later
 ----
@@ -52,3 +55,7 @@ We have 3 models and tables. **User**, **Contact** and **Transactions**
 * The Pagination that is supported is simple limit/offset based. While this works for normal ranges, it should be noted that if page number (offset) is too large, this will be inefficient because Postgres actually scans the table to shift the offset. Better methods exists to attain this.
 * While all the required queries will use index, there's some redundancy in transactions table, which I think I need to think about more.
 * There's a flaky test which is failing sometimes only when the whole suite runs because of before blocks. Will fix it. Correctness-wise it's fine.
+
+### Images
+
+![Creating User](https://github.com/abhishekgupta5/keeper/blob/master/img/create_user.png?raw=true)
