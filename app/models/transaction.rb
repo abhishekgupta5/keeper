@@ -25,7 +25,7 @@ class Transaction < ApplicationRecord
   validates :contact_id,
             inclusion: { in: Contact.ids << nil,
                          message: '%<value>s is not a valid contact id. '\
-                                  'Try not rubgiving it' }
+                                  'Try not giving it' }
 
   # Enums
   enum transaction_type: TRANSACTION_TYPES
