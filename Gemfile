@@ -32,6 +32,8 @@ group :development, :test do
   gem 'rubocop', require: false
   # For GIT hooks during committing
   gem 'overcommit'
+  # For pagination
+  gem 'will_paginate'
 end
 
 group :development do
