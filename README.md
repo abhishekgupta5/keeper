@@ -51,3 +51,4 @@ We have 3 models and tables. **User**, **Contact** and **Transactions**
 *  These are all the APIs. Feel free to play around - remove, add,  modify params/headers as you wish. I have tried to do proper handling at most places but there's room for more
 * The Pagination that is supported is simple limit/offset based. While this works for normal ranges, it should be noted that if page number (offset) is too large, this will be inefficient because Postgres actually scans the table to shift the offset. Better methods exists to attain this.
 * While all the required queries will use index, there's some redundancy in transactions table, which I think I need to think about more.
+* There's a flaky test which is failing sometimes only when the whole suite runs because of before blocks. Will fix it. Correctness-wise it's fine.
