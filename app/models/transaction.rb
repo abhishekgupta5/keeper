@@ -22,10 +22,7 @@ class Transaction < ApplicationRecord
                          message: '%<value>s is not a valid transaction type' }
   # Transaction may or may not belong to a Contact. In case they do, they
   # belong to an existing contact
-  validates :contact_id,
-            inclusion: { in: Contact.ids << nil,
-                         message: '%<value>s is not a valid contact id. '\
-                                  'Try not giving it' }
+  validate :valid_contact_id
 
   # Enums
   enum transaction_type: TRANSACTION_TYPES
@@ -46,5 +43,16 @@ class Transaction < ApplicationRecord
       records = order_by_created_at(records)
       filter_page_wise_records(records, opts[:page], opts[:per_page])
     end
+  end
+
+  # Custom validations
+
+  def valid_contact_id
+    valid_contact_ids = Contact.ids << nil
+    return unless valid_contact_ids.exclude?(contact_id)
+
+    message = "#{contact_id} is not a valid contact id. Try not giving it"
+    errors.add(:contact_id, message)
+    false
   end
 end
