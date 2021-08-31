@@ -1,5 +1,8 @@
 # Keeper!
 
+### Objective
+Build a REST apis for a book keeping ruby application
+
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop-hq/rubocop)
 ### Tools used
 * Ruby 2.6.5 / Rails 6.0 (Only the necessary part) for app
@@ -64,7 +67,7 @@
 ![Querying Transactions](https://github.com/abhishekgupta5/keeper/blob/master/img/db_schema.png?raw=true)  
 
 ###  Scope of improvements
-*  These are all the APIs. Feel free to play around - remove, add,  modify params/headers as you wish. I have tried to do proper handling at most places but there's room for more
-* The Pagination that is supported is simple limit/offset based. While this works for normal ranges, it should be noted that if page number (offset) is too large, this will be inefficient because Postgres actually scans the table to shift the offset. Better methods exists to attain this.
+*  These are all the APIs. Feel free to play around - remove, add, modify params/headers as you wish. I have tried to do proper error handling at most places but there's room for more.
+* The Pagination that is supported is simple limit/offset based. While this works for normal ranges, note that if page number (offset) is too large, this will be inefficient because Postgres actually scans the table to shift the offset. Better methods exist to attain this.
 * While all the required queries will use index, there's some redundancy in transactions table, which I think I need to think about more.
 * There's a flaky test which is failing sometimes only when the whole suite runs because of before blocks. Will fix it. Correctness-wise it's fine.
