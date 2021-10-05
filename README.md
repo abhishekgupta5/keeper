@@ -1,7 +1,11 @@
 # Keeper!
 
 ### Objective
-Build a REST apis for a book keeping ruby application
+The goal is to create a simple bookkeeping API backend where users can
+record financial transactions. These transactions can be either credit or debit
+entries. The transactions can be optionally attributed to a contact (not a
+mandatory relation). A contact is a simple record of (name, phone number).
+The system must be idempotent and prevent duplicate entries.
 
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop-hq/rubocop)
 ### Tools used
